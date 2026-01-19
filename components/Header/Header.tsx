@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { AuthNavigation } from "../AuthNavigation/AuthNavigation";
 import css from "./Header.module.css";
 
-export default function Header() {
+const Header = () => {
   return (
     <header className={css.header}>
-      <Link href="/" aria-label="Home">
+      <Link href="/" aria-label="Home" className={css.logo}>
         NoteHub
       </Link>
       <nav aria-label="Main Navigation">
@@ -13,10 +14,15 @@ export default function Header() {
             <Link href="/">Home</Link>
           </li>
           <li>
-            <Link href="/notes/filter/all">Notes</Link>
+            <Link href="/notes/filter/all" aria-label="View all notes">
+              Notes
+            </Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>
   );
-}
+};
+
+export default Header;

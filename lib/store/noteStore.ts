@@ -1,15 +1,16 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { NoteTag } from "@/types/note";
 
 interface NoteDraft {
   title: string;
   content: string;
-  tag: string;
+  tag: NoteTag;
 }
 
 interface NoteState {
   draft: NoteDraft;
-  setDraft: (updatedFields: Partial<NoteDraft>) => void;
+  setDraft: (data: Partial<NoteDraft>) => void;
   clearDraft: () => void;
 }
 
@@ -23,14 +24,14 @@ export const useNoteStore = create<NoteState>()(
   persist(
     (set) => ({
       draft: initialDraft,
-      setDraft: (updatedFields) =>
+      setDraft: (data) =>
         set((state) => ({
-          draft: { ...state.draft, ...updatedFields },
+          draft: { ...state.draft, ...data },
         })),
       clearDraft: () => set({ draft: initialDraft }),
     }),
     {
-      name: "note-hub-draft",
+      name: "note-storage",
     }
   )
 );

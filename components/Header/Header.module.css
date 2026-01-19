@@ -3,18 +3,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #333;
+  background-color: #4d3bbe;
   color: white;
 }
 
-.header a {
+.headerLink {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.header a:hover {
+.headerLink:hover {
   color: #ddd;
 }
 
@@ -24,14 +24,51 @@
   padding: 0;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
-.navigation li a {
+.navigationItem {
+  display: flex;
+  align-items: center;
+}
+
+.navigationLink {
   text-decoration: none;
   color: white;
   font-size: 1rem;
 }
 
-.navigation li a:hover {
+.navigationLink:hover {
   color: #ddd;
+}
+
+.navigation a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navigation a:visited {
+  color: inherit;
+}
+
+.navigation a:hover {
+  color: #8e9ee9;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.logo:visited {
+  color: white;
+}
+
+.logo:hover {
+  color: #ccc;
 }
